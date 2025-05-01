@@ -27,7 +27,6 @@ openai_client = openai.AsyncAzureOpenAI(
 
 LOCAL_FUNCTIONS = {
     "calculate_bmi": {
-        "keywords": ["bmi", "body mass index"],
         "description": "Calculates Body Mass Index (BMI) using weight (kg) and height (m).",
         "tool_name": "calculate_bmi",
         "prompts": ["Enter weight in kg: ", "Enter height in meters: "],
@@ -35,7 +34,6 @@ LOCAL_FUNCTIONS = {
         "response_format": lambda res: f"Your BMI is: {res}",
     },
     "get_weather": {
-        "keywords": ["weather", "forecast"],
         "description": "Fetches current weather for a given latitude and longitude.",
         "tool_name": "fetch_weather",
         "prompts": ["Enter latitude: ", "Enter longitude: "],
@@ -46,7 +44,6 @@ LOCAL_FUNCTIONS = {
         ),
     },
     "read_logs": {
-        "keywords": ["logs"],
         "description": "Reads and returns the most recent application logs.",
         "resource_uri": "file:///logs-resource",
         "prompts": [],
@@ -92,11 +89,9 @@ async def handle_openai_sampling(message: types.CreateMessageRequestParams) -> t
         return types.CreateMessageResult(role="assistant", content=types.TextContent(type="text", text=f"Error: {e}"), model="gpt-4o-mini", stopReason="error")
 
 async def detect_and_handle_local_function(user_input, session):
-    user_input_lower = user_input.lower()
     
     prompt = build_tool_selection_prompt(user_input)
     
-
     # Use the LLM to choose the most appropriate tool
     response = await openai_client.chat.completions.create(
         model="gpt-4o-mini",  
@@ -109,9 +104,7 @@ async def detect_and_handle_local_function(user_input, session):
 
     selected_tool = response.choices[0].message.content.strip().lower()
 
-    
     for func_name, func_info in LOCAL_FUNCTIONS.items():
-        # if any(keyword in user_input_lower for keyword in func_info["keywords"]):
         if func_name == selected_tool:
             print(f"\n[USING FUNCTION OR RESOURCE: {func_name}]")
             try:
