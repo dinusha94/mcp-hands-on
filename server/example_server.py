@@ -29,7 +29,7 @@ async def fetch_weather(latitude: float, longitude: float) -> str:
 def read_log_file():
     """Read and return the contents of a log file."""
     try:
-        with open('/home/dinusha/mcp-client-x/logs/app.log', 'r', encoding='utf-8') as f:
+        with open('./logs/app.log', 'r', encoding='utf-8') as f:
             content = f.read()
         return content
 
