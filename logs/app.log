@@ -1,0 +1,28 @@
+2025-04-29 09:06:26,344 - mcp-proxy - DEBUG - TOOL params from mcp client server:: tool_name getFailedDevices :: params : {'user_id': '67ca7298e8b9af02ee099a68', 'batchNumber': '66', 'from': '2025-04-29 00:00:00', 'to': '2025-04-29 23:59:59'} 
+2025-04-29 09:06:26,345 - mcp-proxy - DEBUG - API call:: method GET :: url https://devicepulse.senzmatica.com/service/core/user/67ca7298e8b9af02ee099a68/getFailedDevices :: params_ : {'batchNumber': '66', 'from': '2025-04-29 00:00:00', 'to': '2025-04-29 23:59:59'} 
+2025-04-29 09:06:31,778 - mcp-proxy - DEBUG - API response:: response Failed Devices Under batch 66:
+NUC_G6JY117002SU_1
+NUC_G6JY117003Z4_0
+NUC_G6JY117003Z4_1
+NUC_G6JY117002X2_4
+2025-04-29 09:06:37,178 - mcp-proxy - DEBUG - TOOL params from mcp client server:: tool_name getSensorData :: params : {'user_id': '67ca7298e8b9af02ee099a68', 'deviceId': 'NUC_G6JY117002SU_1', 'sensorCode': 'sensor_code_here', 'from': '2025-04-29 08:36:15', 'to': '2025-04-29 14:36:15'} 
+2025-04-29 09:06:37,178 - mcp-proxy - DEBUG - API call:: method GET :: url https://devicepulse.senzmatica.com/service/core/user/67ca7298e8b9af02ee099a68/sensorsByDeviceAndCode :: params_ : {'deviceId': 'NUC_G6JY117002SU_1', 'sensorCode': 'sensor_code_here', 'from': '2025-04-29 08:36:15', 'to': '2025-04-29 14:36:15'} 
+2025-04-29 09:06:37,230 - mcp-proxy - DEBUG - API response:: response <Response [200]>
+2025-04-29 09:15:44,578 - mcp-proxy - DEBUG - TOOL params from mcp client server:: tool_name getFailedDevices :: params : {'user_id': '67ca7298e8b9af02ee099a68', 'batchNumber': '66', 'from': '2025-04-29 08:45:31', 'to': '2025-04-29 14:45:31'} 
+2025-04-29 09:15:44,578 - mcp-proxy - DEBUG - API call:: method GET :: url https://devicepulse.senzmatica.com/service/core/user/67ca7298e8b9af02ee099a68/getFailedDevices :: params_ : {'batchNumber': '66', 'from': '2025-04-29 08:45:31', 'to': '2025-04-29 14:45:31'} 
+2025-04-29 09:15:49,584 - mcp-proxy - DEBUG - API response:: response Failed Devices Under batch 66:
+NUC_G6JY117002SU_1
+NUC_G6JY117003Z4_0
+NUC_G6JY117003Z4_1
+NUC_G6JY117002X2_4
+2025-04-29 09:15:56,768 - mcp-proxy - DEBUG - TOOL params from mcp client server:: tool_name getDevicesByUserAndBatch :: params : {'userId': '67ca7298e8b9af02ee099a68', 'batchNumber': '66'} 
+2025-04-29 09:15:56,769 - mcp-proxy - DEBUG - API call:: method GET :: url https://devicepulse.senzmatica.com/service/core/user/67ca7298e8b9af02ee099a68/batch/66 :: params_ : {} 
+2025-04-29 09:15:56,854 - mcp-proxy - DEBUG - API response:: response Devices under batch 66:
+NUC_G6JY117003Z4_1
+NUC_G6JY117002SU_1
+NUC_G6JY117003Z4_0
+NUC_G6JY117002X2_4
+NUC_G6JY1170029M_0
+2025-04-29 09:16:04,607 - mcp-proxy - DEBUG - TOOL params from mcp client server:: tool_name getSensorData :: params : {'user_id': '67ca7298e8b9af02ee099a68', 'deviceId': 'NUC_G6JY117002SU_1', 'sensorCode': '', 'from': '2025-04-29 08:45:31', 'to': '2025-04-29 14:45:31'} 
+2025-04-29 09:16:04,607 - mcp-proxy - DEBUG - API call:: method GET :: url https://devicepulse.senzmatica.com/service/core/user/67ca7298e8b9af02ee099a68/sensorsByDeviceAndCode :: params_ : {'deviceId': 'NUC_G6JY117002SU_1', 'sensorCode': '', 'from': '2025-04-29 08:45:31', 'to': '2025-04-29 14:45:31'} 
+2025-04-29 09:16:04,694 - mcp-proxy - DEBUG - API response:: response <Response [200]>
