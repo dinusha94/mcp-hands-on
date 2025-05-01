@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 
 server_params = StdioServerParameters(
     command="python",
-    args=["server/example_server.py"],
+    args=["server/mcp_server.py"],
 )
 
 OPENAI_API_VERSION = os.environ["OPENAI_API_VERSION"] 
