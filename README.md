@@ -37,12 +37,12 @@ pip install -e .
 1. Start the client (which will automatically start the server):
 
 ```bash
-python3 src/client/mcp_client.py
+python3 client/mcp_client.py
 ```
 
 
 ## Test with MCP Inspector 
 
 ```
-mcp dev src/server/example_server.py
+mcp dev server/example_server.py
 ```
