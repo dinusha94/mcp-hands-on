@@ -34,12 +34,12 @@ LOCAL_FUNCTIONS = {
         "response_format": lambda res: f"Your BMI is: {res}",
     },
     "get_weather": {
-        "description": "Fetches current weather for a given latitude and longitude.",
+        "description": "Fetches current weather for a given city.",
         "tool_name": "fetch_weather",
-        "prompts": ["Enter latitude: ", "Enter longitude: "],
-        "format_args": lambda lat, lon: {"latitude": float(lat), "longitude": float(lon)},
+        "prompts": ["Enter city: "],
+        "format_args": lambda city: {"city": str(city)},
         "response_format": lambda res: (
-            f"{json.loads(res).get('current_weather', {}).get('temperature', 'N/A')}\u00b0C"
+            f"{json.loads(res).get('current', {})}"
             if res and isinstance(res, str) and res.strip() else "Error: No response from API"
         ),
     },
@@ -147,6 +147,7 @@ async def run():
             
             # initialize the client session
             await session.initialize()
+            
 
             print(f"Available tools: {[tool.name for tool in (await session.list_tools()).tools]}")
             print(f"Available resources: {[resource.name for resource in (await session.list_resources()).resources]}")
